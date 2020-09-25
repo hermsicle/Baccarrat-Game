@@ -19,7 +19,7 @@
 .player {
     border: 1px solid black;
     margin: 10px auto;
-    width: 400px;
+    width: 450px;
     max-width: 100%;
     height: 150px;
     max-height: 100%;
@@ -41,12 +41,13 @@
     font-size: 20px;
     font-weight: bold;
     margin: 10px 15px;
+    max-width: 50px;
 }
 
 .banker {
     border: 1px solid black;
     margin: 10px auto;
-    width: 400px;
+    width: 450px;
     max-width: 100%;
     height: 150px;
     max-height: 100%;
@@ -68,6 +69,7 @@
     font-size: 20px;
     font-weight: bold;
     margin: 10px 15px;
+
 }
 
 .bet-container {
