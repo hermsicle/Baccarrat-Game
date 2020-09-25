@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 4</title>
-    <link href="/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/game.css" rel="stylesheet">
 </head>
 <body>
     <div class="header">
@@ -12,6 +13,7 @@
         <button id="open-modal">Click Here to View Game Rules</button>
     </div>
 
+    <!-- Modal -->
     <div class="overlay">
         <div class="modal">
             <h2>How to play Bacarrat</h2>
@@ -28,15 +30,63 @@
                 <li>If you betted on player and player has the higher cards, you get one point</li>
                 <li>If you betted on player and banker has higher cards, the banker gets one point</li>
                 <li>If you betted on banker and banker has the higher cards, you get one point</li>
-                <li>If you betted on banker and player has the highewr cards, banker get one point</li>
+                <li>If you betted on banker and player has the higher cards, banker get one point</li>
                 <li>Game will reset after you reach 8 points</li>
                 <li>Good Luck!</li>
             </ul>
-
             <button id="close-modal"> X </button>
         </div>
     </div>
 
-    <script type="text/javascript" src="/app.js"></script>
+    <!-- Carousel  -->
+    <div class="carousel">
+        <div class="carousel-item carousel-item-visible">
+            <img src="/images/baccarat1.jpg" #="baccarat1">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/baccarat2.jpg" #="baccarat2">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/baccarat3.jpg" #="baccarat3">
+        </div>
+        <div class="carousel-actions">
+            <button id="prev-button"> < </button>
+            <button id="next-button"> > </button>
+        </div>
+    </div>
+
+    <!-- Game -->
+    <div class="game-container">
+
+        <div class="cards-container">
+            <div class="player">
+                <div id="player-cards">
+                </div>
+                <div id="player-hand">
+                    <h3>Player: <span id="player-total"></span></h3>
+                </div>
+            </div>
+            <div class="banker">
+                <div id="banker-cards">
+                </div>
+                <div id="banker-hand">
+                    <h3>Banker: <span id="banker-total"></span></h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="bet-container">
+            <button id="bet-player">Bet on Player!</button>
+            <button id="bet-banker">Bet on Banker!</button>
+        </div>
+
+        <div class="score-container">
+            <h3>Your Score: <span id="player-score"></span></h3>
+            <h3>House Score: <span id="banker-score"></span></h3>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/javascript/game.js"></script>
+    <script type="text/javascript" src="/javascript/app.js"></script>
 </body>
 </html>
