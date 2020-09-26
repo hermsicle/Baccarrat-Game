@@ -34,14 +34,15 @@
 
 /* Dynamically Created */
 .player-card {
+    text-align: center;
     border: 1px solid green;
+    width: 35px;
+    margin-top: 40px;
+    margin-left: 25px;
     float: left;
-    padding: 50px 25px;
     color: red;
     font-size: 20px;
     font-weight: bold;
-    margin: 10px 15px;
-    max-width: 50px;
 }
 
 .banker {
@@ -62,15 +63,21 @@
 
 /* Dynamically created */
 .banker-card {
+    text-align: center;
     border: 1px solid green;
+    width: 35px;
+    margin-top: 40px;
+    margin-left: 25px;
     float: left;
-    padding: 50px 25px;
     color: black;
     font-size: 20px;
     font-weight: bold;
-    margin: 10px 15px;
-
 }
+
+/* Dynamically created */
+/* .bank-card {
+
+} */
 
 .bet-container {
     border: 1px solid black;

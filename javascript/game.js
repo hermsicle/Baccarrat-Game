@@ -134,8 +134,12 @@ function pHand() {
 
     for(let i = 0; i < playerCards.length; i++){
         let playerCardElement = document.createElement('div')
+        let playerCard = document.createElement('p')
+        playerCard.textContent = playerCards[i]
+        playerCard.classList.add('play-card')
         playerCardElement.classList.add('player-card')
-        playerCardElement.textContent = playerCards[i]
+        playerCardElement.appendChild(playerCard)
+        // playerCardElement.textContent = playerCards[i]
         playerHand.append(playerCardElement)
     }
 }
@@ -194,8 +198,12 @@ function bHand() {
 
     for(let i = 0; i < bankerCards.length; i++){
         let bankerCardElement = document.createElement('div')
+        let bankerCard = document.createElement('p')
+        bankerCard.textContent = bankerCards[i]
+        bankerCard.classList.add('bank-card')
         bankerCardElement.classList.add('banker-card')
-        bankerCardElement.textContent = bankerCards[i]
+        bankerCardElement.appendChild(bankerCard)
+        // bankerCardElement.textContent = bankerCards[i]
         bankerhand.append(bankerCardElement)
     }
 }
