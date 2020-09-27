@@ -16,7 +16,7 @@ You have two options to choose from:
 If you selected "Bet on Player" you are betting on the Player total hand to be bigger than the Banker's total hand. If your bet is indeed correct, your score increments by 1. Else, the houses's score increments by 1.
 
 ### Betting on Banker
-IF you selected "Bet on Banker" you are betting on the Banker total hand to be bigger than the Player's total hand. If your bet is indeed correct, your score increments by 1. Else, the houses's score increments by 1.
+If you selected "Bet on Banker" you are betting on the Banker total hand to be bigger than the Player's total hand. If your bet is indeed correct, your score increments by 1. Else, the houses's score increments by 1.
 
 ### Winning Score
 To win this game simply reach 8 points. 

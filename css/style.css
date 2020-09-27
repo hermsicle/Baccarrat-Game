@@ -16,6 +16,7 @@ body {
     border: unset;
     background-color: black;
     color: white;
+    outline: none;
 }
 
 #open-modal:hover {
@@ -70,6 +71,7 @@ body {
     border: unset;
     background-color: black;
     color: white;
+    outline: none;
 }
 
 #close-modal:hover {
