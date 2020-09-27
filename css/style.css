@@ -61,11 +61,11 @@ body {
     margin-right: auto;
     max-width: 400px;
     padding: 10px;
-    border: 1px dotted black;
     margin-top: 2px;
 }
 
 #close-modal {
+    margin-top: 15px;
     padding: 10px 25px;
     border-radius: 10px;
     border: unset;
