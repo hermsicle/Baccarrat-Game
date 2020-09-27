@@ -4,8 +4,11 @@ const bankerhand = document.getElementById('banker-cards')
 const bankerTotal = document.getElementById('banker-total')
 const betPlayerButton = document.getElementById('bet-player')
 const betBankerButton = document.getElementById('bet-banker')
+const restartGameButton = document.getElementById('restart-game')
 const playerScore = document.getElementById('player-score')
 const bankerScore = document.getElementById('banker-score')
+const tieScore = document.getElementById('tie-score')
+const winner = document.getElementById('winner')
 
 let limit = 10
 let playerCards = [];
@@ -17,47 +20,62 @@ let bankerTotalSum = 0;
 let scoreOfPlayer = 0;
 let scoreOfBanker = 0;
 
+function checkScore(){
+    if(scoreOfPlayer === 8){
+        console.log('Player has won!')
+        restartGameButton.style.display = 'block'
+        betPlayerButton.style.display = 'none'
+        betBankerButton.style.display = 'none'
+        winner.textContent = "You have won, play again?"
+    }
+    if(scoreOfBanker === 8){
+        console.log('Banker has won!')
+        restartGameButton.style.display = 'block'
+        betPlayerButton.style.display = 'none'
+        betBankerButton.style.display = 'none'
+        winner.textContent = "Sorry, you have lost. try again?"
+    }
+    restartGame()
+}
+
+function restartGame(){
+    restartGameButton.addEventListener('click' , function(){
+        location.reload()
+    })
+}
+
 betPlayerButton.addEventListener('click' , function(){
+    tieScore.style.display = 'none'
     newPlayerHand()
     newBankerHand()
-    console.log('Player has a total of: ' + playerTotalSum)
-    console.log('Banker has a total of: ' + bankerTotalSum)
     if(playerTotalSum == bankerTotalSum){
-        console.log('Tie!') //Scores remain the same
-        alert('It is a tie!')
+        tieScore.style.display = 'block'
     }
     else if(playerTotalSum > bankerTotalSum){
-        console.log('Player has higher hand')   //We are betting on player so increment player score by 1
         scoreOfPlayer++
         playerScore.innerText = scoreOfPlayer
-        console.log('You have won! Players score is: ' + scoreOfPlayer)
     } else {
-        console.log('Banker has higher hand!')  //We are betting on player so increment banker score by 1
         scoreOfBanker++
         bankerScore.innerText = scoreOfBanker
-        console.log('You have lost! Bankers score is: ' + scoreOfBanker)
     }
+    checkScore()
 })
 
 betBankerButton.addEventListener('click', function(){
+    tieScore.style.display = 'none'
     newBankerHand()
     newPlayerHand()
-    console.log('Player has a total of: ' + playerTotalSum)
-    console.log('Banker has a total of: ' + bankerTotalSum)
     if(playerTotalSum == bankerTotalSum){
-        console.log('Tie!') //Scores remain the same
-        alert('It is a tie!')
+        tieScore.style.display = 'block'
     }
     else if(bankerTotalSum > playerTotalSum){
-        console.log('Banker has the higher hand!')
         scoreOfPlayer++ 
         playerScore.innerText = scoreOfPlayer
-        console.log('You have bet on the right side! Player score  + 1')
     } else {
-        console.log('player has the higher hand') 
         scoreOfBanker++
         bankerScore.innerText = scoreOfBanker
     }
+    checkScore()
 })
 
 function newPlayerHand(){
@@ -85,9 +103,6 @@ function newBankerHand(){
 }
 
 function pHand() {
-    // let playerCards = [];
-    // let newPlayerCards = [];
-
     for(let i = 0; i < 2; i++){
         playerCards.push(Math.floor(Math.random() * 10) + 1)
     }
@@ -139,15 +154,11 @@ function pHand() {
         playerCard.classList.add('play-card')
         playerCardElement.classList.add('player-card')
         playerCardElement.appendChild(playerCard)
-        // playerCardElement.textContent = playerCards[i]
         playerHand.append(playerCardElement)
     }
 }
 
 function bHand() {
-    // let bankerCards = []
-    // let newBankerCards = []
-
     for(let i = 0; i < 2; i++){
         bankerCards.push(Math.floor(Math.random() * 10) + 1)
     }
@@ -203,7 +214,6 @@ function bHand() {
         bankerCard.classList.add('bank-card')
         bankerCardElement.classList.add('banker-card')
         bankerCardElement.appendChild(bankerCard)
-        // bankerCardElement.textContent = bankerCards[i]
         bankerhand.append(bankerCardElement)
     }
 }

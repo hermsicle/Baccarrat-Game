@@ -16,6 +16,11 @@
     padding: 10px;
 }
 
+#tie-score {
+    color: red;
+    display: none;
+}
+
 .player {
     border: 1px solid black;
     margin: 10px auto;
@@ -99,6 +104,11 @@
     cursor: pointer;
     background-color: black;
     color: white;
+}
+
+.bet-container #restart-game {
+    display: none;
+    margin: 0 auto;
 }
 
 .score-container {
